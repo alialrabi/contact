@@ -21,4 +21,5 @@ public interface ContactRepository extends JpaRepository<Contact, Long> {
 	List<Contact> findByAddressPostalCode(String postalCode);
 	
 
+
 }
