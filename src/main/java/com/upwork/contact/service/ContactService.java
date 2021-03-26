@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.upwork.contact.model.Contact;
 import com.upwork.contact.repository.ContactRepository;
 
@@ -18,10 +19,9 @@ public class ContactService {
 	private final Logger log = LoggerFactory.getLogger(ContactService.class);
 
     private final ContactRepository contactRepository;
-    
 
     public ContactService(ContactRepository contactRepository) {
-    	this.contactRepository = contactRepository;        
+    	this.contactRepository = contactRepository;
     }
 
       
@@ -31,7 +31,7 @@ public class ContactService {
         return contact;
     }	
     
-    public List<Contact> findAll(Pageable pageable) {
+    public List<Contact> findAll() {
         log.debug("Request to get all Contacts");
         return contactRepository.findAll();
     }
